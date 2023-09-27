@@ -5,8 +5,8 @@ function UI() {
 
 
 UI.prototype.addToUI = function (task) {
+
   let newHtml = `
-  
   <div class="task" data-createdat="${task.id}">
     <div class="task__details">
       <input type="checkbox" class="task-check" />
@@ -26,10 +26,27 @@ UI.prototype.addToUI = function (task) {
 }
 
 
+
+//...........................Form Reset...............................
 UI.prototype.resetForm = function () {
   document.querySelector('#newtaskID').value = ''
 }
 
+
+
+//...........................Delete Task...............................
+
+UI.prototype.deleteTask = function (e) {
+  const task = e.target.parentElement.parentElement;
+  task.remove();
+}
+
+
+//...........................Complete Task...............................
+UI.prototype.completeTask = function (e) {
+  const task = e.target.parentElement.parentElement;
+  task.classList.toggle('completed');
+}
 
 
 
