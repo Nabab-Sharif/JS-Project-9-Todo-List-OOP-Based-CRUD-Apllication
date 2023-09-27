@@ -1,7 +1,7 @@
+import LS from './LS.js';
 
-function UI() {
 
-}
+function UI() { }
 
 
 UI.prototype.addToUI = function (task) {
@@ -51,4 +51,5 @@ UI.prototype.completeTask = function (e) {
 
 
 export default UI;
+
 
