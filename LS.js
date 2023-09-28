@@ -13,7 +13,6 @@ LS.prototype.fetchTask = function () {
   // }
 
   tasks = (tasks) ? JSON.parse(tasks) : [];
-
   return tasks;
 }
 
@@ -41,7 +40,7 @@ LS.prototype.deleteTask = function (id) {
 LS.prototype.completeTask = function (id) {
   let tasks = this.fetchTask();
   let index = tasks.findIndex((task) => task.id === id)
-  console.log(index)
+
   if (tasks[index].isCompleted) {
     tasks[index].isCompleted = false;
   } else {
