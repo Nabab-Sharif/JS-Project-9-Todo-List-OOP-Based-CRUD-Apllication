@@ -1,10 +1,13 @@
 import LS from './LS.js';
 
-
 function UI() { }
+const ls = new LS();
+
 
 
 UI.prototype.addToUI = function (task) {
+
+  ls.storeTask(task);
 
   let newHtml = `
   <div class="task" data-createdat="${task.id}">
@@ -37,14 +40,21 @@ UI.prototype.resetForm = function () {
 //...........................Delete Task...............................
 
 UI.prototype.deleteTask = function (e) {
+
   const task = e.target.parentElement.parentElement;
+  const id = task.dataset.createdat;
+  ls.deleteTask(id);
   task.remove();
 }
+
 
 
 //...........................Complete Task...............................
 UI.prototype.completeTask = function (e) {
   const task = e.target.parentElement.parentElement;
+
+  const id = task.dataset.createdat;
+  ls.completeTask(id);
   task.classList.toggle('completed');
 }
 

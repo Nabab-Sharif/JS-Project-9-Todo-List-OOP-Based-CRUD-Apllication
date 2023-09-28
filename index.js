@@ -7,6 +7,8 @@ import Task from './Task.js';
 
 const ui = new UI();
 
+
+
 document.querySelector('.AddTaskBtn').addEventListener('click', (e) => {
   const taskTitle = document.querySelector('#newtaskID').value;
 
