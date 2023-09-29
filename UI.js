@@ -79,7 +79,7 @@ UI.prototype.showAllTasks = function () {
   tasks.forEach(task => {
     newHtml += `
     <div class="task  ${task.isCompleted ? "completed" : " "} " data-createdat="${task.id}">
-      <div class="task__details">r
+      <div class="task__details">
         <input type="checkbox"  class="task-check"  ${task.isCompleted ? "checked" : " "} />
         <label class="task-title">${task.title}</label>
       </div>
