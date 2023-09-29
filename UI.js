@@ -5,6 +5,7 @@ const ls = new LS();
 
 
 
+//...........................Add Task To UI Start...............................
 UI.prototype.addToUI = function (task) {
 
   ls.storeTask(task);
@@ -28,17 +29,21 @@ UI.prototype.addToUI = function (task) {
 
 }
 
+//...........................Add Task To UI End...............................
 
 
-//...........................Form Reset...............................
+
+
+//...........................Form Reset Start...............................
 UI.prototype.resetForm = function () {
   document.querySelector('#newtaskID').value = ''
 }
+//...........................Form Reset End...............................
 
 
 
-//...........................Delete Task...............................
 
+//...........................Delete Task Start...............................
 UI.prototype.deleteTask = function (e) {
 
   const task = e.target.parentElement.parentElement;
@@ -46,10 +51,13 @@ UI.prototype.deleteTask = function (e) {
   ls.deleteTask(id);
   task.remove();
 }
+//...........................Delete Task End...............................
 
 
 
-//...........................Complete Task...............................
+
+
+//...........................Complete Task Start...............................
 UI.prototype.completeTask = function (e) {
   const task = e.target.parentElement.parentElement;
 
@@ -57,18 +65,22 @@ UI.prototype.completeTask = function (e) {
   ls.completeTask(id);
   task.classList.toggle('completed');
 }
+//...........................Complete Task End...............................
 
 
-//...........................List of tasks from LocalStorage...............................
+
+
+//...........................Show List of tasks from LocalStorage Start...............................
 
 UI.prototype.showAllTasks = function () {
   let tasks = ls.fetchTask();
+
   let newHtml = '';
   tasks.forEach(task => {
     newHtml += `
-    <div class="task" ${task.isCompleted ? "completed" : ""} data-createdat="${task.id}">
-      <div class="task__details">
-        <input type="checkbox" class="task-check" ${task.isCompleted ? "checked" : ""}/>
+    <div class="task  ${task.isCompleted ? "completed" : " "} " data-createdat="${task.id}">
+      <div class="task__details">r
+        <input type="checkbox"  class="task-check"  ${task.isCompleted ? "checked" : " "} />
         <label class="task-title">${task.title}</label>
       </div>
 
@@ -84,6 +96,8 @@ UI.prototype.showAllTasks = function () {
   document.querySelector('.task-list').innerHTML = newHtml;
 
 }
+//...........................Show List of tasks from LocalStorage End...............................
+
 
 export default UI;
 
