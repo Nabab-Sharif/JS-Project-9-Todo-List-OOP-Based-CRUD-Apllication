@@ -1,5 +1,4 @@
 
-
 import UI from './UI.js';
 import Task from './Task.js';
 
@@ -8,6 +7,8 @@ import Task from './Task.js';
 const ui = new UI();
 
 ui.showAllTasks();
+
+
 
 document.querySelector('.AddTaskBtn').addEventListener('click', (e) => {
   const taskTitle = document.querySelector('#newtaskID').value;
@@ -50,3 +51,4 @@ document.querySelector('.EditTaskBtn').addEventListener('click', (e) => {
 document.querySelector('.CancelTaskBtn').addEventListener('click', (e) => {
   ui.cancelTask(e);
 })
+
