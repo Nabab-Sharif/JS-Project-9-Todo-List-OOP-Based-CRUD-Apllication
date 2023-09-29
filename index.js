@@ -34,4 +34,8 @@ document.querySelector('.task-list').addEventListener('click', (e) => {
     ui.completeTask(e);
   }
 
+  if (e.target.className.includes('task__op_edit')) {
+    ui.editTask(e);
+  }
+
 })

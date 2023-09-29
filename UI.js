@@ -99,5 +99,27 @@ UI.prototype.showAllTasks = function () {
 //...........................Show List of tasks from LocalStorage End...............................
 
 
+
+
+//...........................Edit Task Start...............................
+
+UI.prototype.editTask = function (e) {
+  const task = e.target.parentElement.parentElement;
+  const id = task.dataset.createdat;
+  const data = ls.findTask(id);
+
+  document.querySelector('#newtaskID').value = data.title;
+  document.querySelector('#updateTaskId').value = data.id;
+
+
+  document.querySelector('.AddTaskBtn').style.display = 'none';
+  document.querySelector('.EditTaskBtn').style.display = 'inline';
+  document.querySelector('.CancelTaskBtn').style.display = 'inline';
+
+};
+
+//...........................Edit Task End...............................
+
+
 export default UI;
 

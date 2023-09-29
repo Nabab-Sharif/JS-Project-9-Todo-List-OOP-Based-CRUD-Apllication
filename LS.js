@@ -54,6 +54,13 @@ LS.prototype.completeTask = function (id) {
 
 
 
+LS.prototype.findTask = function (id) {
+  let tasks = this.fetchTask();
+  let result = tasks.find((task) => task.id === id)
+
+  return result;
+}
+
 
 export default LS;
 
