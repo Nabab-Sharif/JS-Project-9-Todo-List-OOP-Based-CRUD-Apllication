@@ -121,5 +121,41 @@ UI.prototype.editTask = function (e) {
 //...........................Edit Task End...............................
 
 
+
+
+//...........................Update Task replace Start...............................
+
+UI.prototype.updateTask = function (e) {
+  const taskId = document.querySelector('#updateTaskId').value;
+  const taskTitle = document.querySelector('#newtaskID').value;
+  const tasks = document.querySelectorAll('.task-title');
+
+
+  if (taskTitle.length > 0) {
+    tasks.forEach(title => {
+      if (title.parentElement.parentElement.dataset.createdat === taskId) {
+        title.innerText = taskTitle;
+      }
+
+    });
+
+  }
+
+
+  document.querySelector('#newtaskID').value = '';
+  document.querySelector('#updateTaskId').value = '';
+
+
+  document.querySelector('.AddTaskBtn').style.display = 'inline';
+  document.querySelector('.EditTaskBtn').style.display = 'none';
+  document.querySelector('.CancelTaskBtn').style.display = 'none';
+
+
+}
+
+//...........................Update Task replace End...............................
+
+
+
 export default UI;
 
